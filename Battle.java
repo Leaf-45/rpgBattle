@@ -116,6 +116,7 @@ public class Battle implements ActionMenu1
         }
         else
         {
+            Charlie.setMp(Charlie.getMp() - 9);
             System.out.printf("Lighting did %d damage!", damage);
             return damage;
         }
@@ -127,6 +128,7 @@ public class Battle implements ActionMenu1
         int damage = ((atk * 2) - def);
         if (mp < 20)
         {
+            Charlie.setMp(Charlie.getMp() - 20);
             System.out.println("You tried to cast Heat Haze but didn't have enough mp!");
             return 0;
         }
