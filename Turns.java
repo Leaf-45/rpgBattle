@@ -35,7 +35,7 @@ public class Turns extends Battle
             characterTurn(David);
             return;
         }
-        System.out.printf("Stacked will do %d damage" ,dishes.peek());
+        System.out.printf("Your dish will do %d damage" ,dishes.peek());
         System.out.printf("%n1: Yes%n2: No%n");
         try
         {
@@ -232,7 +232,7 @@ public class Turns extends Battle
             while (!defenseCheck.isEmpty())
             {
                 Character defend = defenseCheck.pop();
-                defend.setDef(defend.getDef() - 5);
+                defend.setDef(defend.getDef() - 10);
             }
         }
         if (!turnOrder.isEmpty())
@@ -277,7 +277,7 @@ public class Turns extends Battle
     {
         System.out.printf("%n------------------------------------------------------------------------------------");
         System.out.printf("%nIt's %s turn!%n1: preform a basic attack%n2: defend for the turn%n" +
-                "3: check everyone condition", c.getName());
+                "3: check everyone's condition (Does not consume turn)", c.getName());
         if (c == Aleph)
         {
             System.out.printf("%n4: Cast flaria a hard hitting spell (Cost 12mp)%n");
@@ -288,25 +288,25 @@ public class Turns extends Battle
         }
         else if (c == Charlie)
         {
-           if (s == Weather.Spring)
-           {
-               System.out.printf("%n4: Strike down your foe with lighting! But it could never strike twice right?" +
-                       "(Cost 9mp)%n");
-           }
-           else if (s == Weather.Summer)
-           {
-               System.out.printf("%n4: Heat haze is a devastatingly strong yet costly spell to cast (cost 20 mp)%n");
-           }
-           else if (s == Weather.Fall)
-           {
-               System.out.printf("%n4: Autumn's breeze not only hits the enemy but heals everyone for a small amount" +
-                       "(Cost 7mp)%n");
-           }
-           else if (s == Weather.Winter)
-           {
-               System.out.printf("%n4: Bitter cold hits hard and permanently reduces " +
-                       "the enemies defense by 2 points! (Cost all mp)%n");
-           }
+            if (s == Weather.Spring)
+            {
+                System.out.printf("%n4: Strike down your foe with lighting! But it could never strike twice right?" +
+                        "(Cost 9mp)%n");
+            }
+            else if (s == Weather.Summer)
+            {
+                System.out.printf("%n4: Heat haze is a devastatingly strong yet costly spell to cast (cost 20 mp)%n");
+            }
+            else if (s == Weather.Fall)
+            {
+                System.out.printf("%n4: Autumn's breeze not only hits the enemy but heals everyone for a small amount" +
+                        " (Cost 7mp)%n");
+            }
+            else if (s == Weather.Winter)
+            {
+                System.out.printf("%n4: Bitter cold hits hard and permanently reduces " +
+                        "the enemies defense by 2 points! (Cost all mp)%n");
+            }
         }
         else if (c == David)
         {
