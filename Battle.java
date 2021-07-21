@@ -224,7 +224,7 @@ public class Battle implements ActionMenu1
         for (int i = 0; i <= 3; i++)
         {
             int fill = rng.nextInt(31);
-            dishes.push(fill);
+            dishes.push(fill + 1);
             stackCounter++;
         }
     }
