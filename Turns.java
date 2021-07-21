@@ -40,16 +40,17 @@ public class Turns extends Battle
         try
         {
             int input = sc.nextInt();
-            if (input == 1)
+            switch (input)
             {
-                goblin.setHp(goblin.getHp() - stacked());
-            }
-            if (input == 2)
-            {
+                case 1: goblin.setHp(goblin.getHp() - stacked());
+                break;
+                case 2: UI(David);
                 characterTurn(David);
+                break;
+                default: System.out.printf("%nPlease enter a valid number");
+                stackCheck();
+                break;
             }
-            else System.out.println("Please input a valid number");
-            stackCheck();
         } catch (InputMismatchException i)
         {
             System.out.println("Please enter a valid input");
@@ -268,6 +269,7 @@ public class Turns extends Battle
         System.out.printf("%n%d spe    %d spe    %d spe    %d spe%n", Aleph.getSpe(), Brett.getSpe(), Charlie.getSpe(),
                 David.getSpe());
 
+        UI(c);
         characterTurn(c);
     }
 
@@ -312,5 +314,4 @@ public class Turns extends Battle
                     "(you have %d out of 4 dishes)%n", stackCounter);
         }
     }
-
 }
